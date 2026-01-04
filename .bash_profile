@@ -5,7 +5,7 @@ unset file;
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-export EDITOR=vim
+export EDITOR=emacs
 
 export HISTCONTROL=erasedups
 export HISTSIZE=50000
