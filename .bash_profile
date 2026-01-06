@@ -2,7 +2,6 @@ for file in ~/.{bash_prompt,bash_profile.local}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 export EDITOR=emacs
@@ -27,8 +26,9 @@ alias ll="ls -Al"
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
-
-
+alias e="emacs"
+alias sc="e ~/.bash_profile && rf"
+alias rf=". ~/.bash_profile"
 
 
 # "most frequent", shows you the commands you use the most. Good targets for aliasing shorter,
@@ -69,10 +69,10 @@ function om {
 
 
 # git-based tab-autocomplete
-source ./git-completion.bash
+#source ./git-completion.bash
 
 # turn it on for the shortened aliases from before
-__git_complete g _git
-__git_complete gch _git_checkout
-__git_complete gd _git_diff
-__git_complete gb _git_branch
+#__git_complete g _git
+#__git_complete gch _git_checkout
+#__git_complete gd _git_diff
+#__git_complete gb _git_branch

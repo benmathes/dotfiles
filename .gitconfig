@@ -17,3 +17,6 @@
   enabled = true # record conflict resolution
 [log]
   decorate = short # don't show ref prefixes
+[user]
+	name = Ben Mathes
+	email = mathes.ben@gmail.com
