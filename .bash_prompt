@@ -43,10 +43,10 @@ set_prompts() {
   local violet=$(tput setaf 61);
 
   PS1="\[\033]0;\w\007\]";
+  PS1+="\[${cyan}\]\w\n";
   PS1+="\[${red}\]\u";
   PS1+="\[${blue}\]@";
   PS1+="\[${red}\]\h:";
-  PS1+="\[${cyan}\]\W";
   PS1+="\$(__git_prompt \" ${violet}\")";
   PS1+="\[${blue}\] \$ \[${reset}\]";
   export PS1;
