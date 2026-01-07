@@ -38,3 +38,5 @@ done
 
 mkdir -p ~/.vim/colors
 symlink_prompt vim.colors/vilight.vim .vim/colors/
+
+symlink_prompt git-completion.bash .git-completion.bash
