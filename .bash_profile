@@ -45,14 +45,14 @@ alias gc='git commit --verbose';
 alias gp='git pull';
 alias gch='git checkout'
 
-# diff my local master with "production"
-alias gdp='git diff origin/master master';
+# diff my local main with "production"
+alias gdp='git diff origin/main main';
 
 # diff my local branch with origin
 alias gdo='git diff origin/$(__git_ps1) $(__git_ps1)';
 
-# which files are different on my current branch from master?
-alias gdm='git diff master $(git rev-parse --abbrev-ref HEAD) --name-only'
+# which files are different on my current branch from main?
+alias gdm='git diff main $(git rev-parse --abbrev-ref HEAD) --name-only'
 
 
 

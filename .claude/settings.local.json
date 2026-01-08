@@ -6,7 +6,10 @@
       "Bash(git push:*)",
       "Bash(source:*)",
       "Bash(echo:*)",
-      "Bash(__git_complete g _git)"
+      "Bash(__git_complete g _git)",
+      "Bash(git branch:*)",
+      "Bash(gh auth status)",
+      "Bash(gh repo edit:*)"
     ]
   }
 }
