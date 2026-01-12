@@ -44,6 +44,7 @@ alias gap='git add -p';              # default to the "selectively git-add my ch
 alias gc='git commit --verbose';
 alias gp='git pull';
 alias gch='git checkout'
+alias gl='git log --oneline --graph';
 
 # diff my local main with "production"
 alias gdp='git diff origin/main main';
