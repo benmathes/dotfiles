@@ -29,6 +29,7 @@ alias rm="rm -v"
 alias e="emacs"
 alias sc="e ~/.bash_profile && rf"
 alias rf=". ~/.bash_profile"
+alias clc="claude --chrome"
 
 
 # "most frequent", shows you the commands you use the most. Good targets for aliasing shorter,
