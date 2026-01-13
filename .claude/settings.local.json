@@ -9,7 +9,8 @@
       "Bash(__git_complete g _git)",
       "Bash(git branch:*)",
       "Bash(gh auth status)",
-      "Bash(gh repo edit:*)"
+      "Bash(gh repo edit:*)",
+      "Bash(ln:*)"
     ]
   }
 }

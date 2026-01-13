@@ -46,6 +46,7 @@ alias gc='git commit --verbose';
 alias gp='git pull';
 alias gch='git checkout'
 alias gl='git log --oneline --graph';
+alias gbdo='git branch --merged main | grep -v "^\*" | grep -v "main" | xargs -n 1 git branch -d' # git branch delete old
 
 # diff my local main with "production"
 alias gdp='git diff origin/main main';
@@ -71,10 +72,13 @@ function om {
 
 
 # git-based tab-autocomplete
-#source ./git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  source ~/.git-completion.bash
 
-# turn it on for the shortened aliases from before
-#__git_complete g _git
-#__git_complete gch _git_checkout
-#__git_complete gd _git_diff
-#__git_complete gb _git_branch
+  # enable for shortened aliases
+  __git_complete g _git
+  __git_complete gch _git_checkout
+  __git_complete gd _git_diff
+  __git_complete gb _git_branch
+  __git_complete gp _git_pull
+fi
