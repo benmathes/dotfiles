@@ -37,14 +37,14 @@ __git_prompt() {
 set_prompts() {
   tput sgr0;
   local reset=$(tput sgr0);
-  local blue=$(tput setaf 6);
+  local blue=$(tput setaf 81);
   local cyan=$(tput setaf 2);
   local red=$(tput setaf 1)
   local violet=$(tput setaf 61);
   local yellow=$(tput setaf 3);
 
   PS1="\[\033]0;\w\007\]";
-  PS1+="\[${yellow}\]=================\w\n";
+  PS1+="\[${yellow}\]=================> \w\n";
   PS1+="\[${red}\]\u";
   PS1+="\[${blue}\]@";
   PS1+="\[${red}\]\h:";

@@ -2,7 +2,7 @@ for file in ~/.{bash_prompt,bash_profile.local}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 export EDITOR=emacs
 
