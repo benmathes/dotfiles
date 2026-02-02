@@ -39,4 +39,7 @@ done
 mkdir -p ~/.vim/colors
 symlink_prompt vim.colors/vilight.vim .vim/colors/
 
+mkdir -p ~/.claude
+symlink_prompt claude/CLAUDE.md .claude/CLAUDE.md
+
 symlink_prompt git-completion.bash .git-completion.bash
