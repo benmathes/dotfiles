@@ -10,7 +10,8 @@
       "Bash(git branch:*)",
       "Bash(gh auth status)",
       "Bash(gh repo edit:*)",
-      "Bash(ln:*)"
+      "Bash(ln:*)",
+      "Bash(ls:*)",
     ]
   }
 }
