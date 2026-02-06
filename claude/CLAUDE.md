@@ -34,18 +34,20 @@ When brainstorming or doing product/feature discovery, stay in "WHAT" (spec) mod
 Vector embeddings, specific database choices, API design - these are HOW. They should be deferred to implementation, not mixed into spec-level brainstorming. If you find yourself naming specific technologies or implementation patterns during brainstorming, pull back to describing what the system does, not how it does it.
 
 ## Design Docs Organization
-Organize design docs by implementation status:
-- `designs/unbuilt/` - Unbuilt/pending features
-- `designs/built/` - Implemented features
+All markdown planning and design docs live under `planning/` at the repo root. Never create a root `designs/` folder.
+- `planning/designs/unbuilt/` - Unbuilt/pending feature designs
+- `planning/designs/built/` - Implemented feature designs
+- `planning/product/` - Product descriptions and vision
+- `planning/strategy/` - Strategic tradeoffs and dimensions
 
-No design files should live directly in `designs/` - always use the appropriate subfolder. When a feature is implemented, move its design doc from `designs/unbuilt/` to `designs/built/`. Update any symlinks in `.claude/commands/` accordingly.
+No design files should live directly in `planning/designs/` - always use the `unbuilt/` or `built/` subfolder. When a feature is implemented, move its design doc from `planning/designs/unbuilt/` to `planning/designs/built/`. Update any symlinks in `.claude/commands/` accordingly.
 
 ## Post-Feature Consolidation Check
 After completing any feature, ask: "What does this replace, overlap with, or obsolete?"
 
 If consolidation candidates exist:
 1. Discuss with user before any removal
-2. Create structured entry in `designs/unbuilt/consolidation-<name>.md`
+2. Create structured entry in `planning/designs/unbuilt/consolidation-<name>.md`
 3. Split removal work to a separate branch
 
 This guards against: feature bloat, combinatorial state/bug explosion, and pager burden. These systems must be maintainable by one person.
