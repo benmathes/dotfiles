@@ -5,6 +5,7 @@ unset file;
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 export EDITOR=emacs
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 export HISTCONTROL=erasedups
 export HISTSIZE=50000
@@ -82,3 +83,4 @@ if [ -f ~/.git-completion.bash ]; then
   __git_complete gb _git_branch
   __git_complete gp _git_pull
 fi
+eval "$(direnv hook bash)"

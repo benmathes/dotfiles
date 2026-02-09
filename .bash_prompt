@@ -42,9 +42,10 @@ set_prompts() {
   local red=$(tput setaf 1)
   local violet=$(tput setaf 61);
   local yellow=$(tput setaf 3);
+  local green=$(tput setaf 2);
 
   PS1="\[\033]0;\w\007\]";
-  PS1+="\[${yellow}\]=================> \w\n";
+  PS1+="\[${yellow}\]=================> \w\${VIRTUAL_ENV:+ \[${green}\](\$(basename \$VIRTUAL_ENV))\[${yellow}\]}\n";
   PS1+="\[${red}\]\u";
   PS1+="\[${blue}\]@";
   PS1+="\[${red}\]\h:";
