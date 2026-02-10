@@ -1,4 +1,17 @@
 {
   "model": "opus",
-  "preferredNotifChannel": "terminal_bell"
+  "preferredNotifChannel": "terminal_bell",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/bell.sh"
+          }
+        ]
+      }
+    ]
+  }
 }
