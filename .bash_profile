@@ -47,7 +47,7 @@ alias gc='git commit --verbose';
 alias gp='git pull';
 alias gch='git checkout'
 alias gl='git log --oneline --graph';
-alias gbdo='git branch --merged main | grep -v "^\*" | grep -v "main" | xargs -n 1 git branch -d' # git branch delete old
+alias gbdo='gch main && gp && git branch --merged main | grep -v "^\*" | grep -v "main" | xargs -n 1 git branch -d' # git branch delete old
 
 # diff my local main with "production"
 alias gdp='git diff origin/main main';

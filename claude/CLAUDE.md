@@ -18,6 +18,7 @@ Unless overridden by a specific repo:
 ## Feature development
 - develop on a separate, per-feature git (or similar version control) branch
 - name the branch based on the work we are doing, with snake_case
+- **Ground in existing design philosophy BEFORE asking questions**: Before interviewing the user or proposing anything, read `planning/designs/principles.md`, `planning/strategy/`, and any existing designs in `planning/designs/unbuilt/` and `planning/designs/built/`. Your interview questions and design proposals must demonstrate familiarity with existing principles, entities, and patterns. If you ask a question that the design docs already answer, that's a failure.
 - When I first am discussing a new feature, interview me in detail using the AskUserQuestionTool about the feature: technical implementation, UI & UX, concerns, tradeoffs, etc. that we haven't covered.
 - every repo should have some strategic dimensions, like "A even over B" statements such as "stability even over speed" or "cheap even over quality" or similar "Real Strategy". If none exist, interview me about what you think the key dimensions (3-5) should be and write that into that repo's LEARNINGS.md
 
