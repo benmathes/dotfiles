@@ -40,3 +40,13 @@ The configs support machine-specific customization via `.local` files (not track
 - Vim uses pathogen for plugins, comma as leader key, 2-space indentation
 - Git aliases in `.bash_profile`: `g`, `gb`, `gd`, `gs`, `gap`, `gc`, `gp`, `gch`
 - Git tab-completion enabled for aliases via `__git_complete`
+
+## Agent Safety: The Lethal Trifecta
+
+Per [Simon Willison](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/), never combine all three of these in a single agent or tool chain:
+
+1. **Access to private data** (files, emails, credentials, etc.)
+2. **Exposure to untrusted content** (web pages, user-submitted text, public issues, emails from strangers)
+3. **Ability to exfiltrate** (send emails, make HTTP requests, post to APIs)
+
+Any two are manageable. All three together means an attacker can embed instructions in untrusted content that trick the agent into leaking private data. LLMs cannot reliably distinguish instruction source, so "guardrails" are not sufficient — avoid the combination entirely.
