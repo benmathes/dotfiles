@@ -1,6 +1,5 @@
 {
   "model": "opus",
-  "preferredNotifChannel": "terminal_bell",
   "hooks": {
     "Notification": [
       {
@@ -13,5 +12,6 @@
         ]
       }
     ]
-  }
+  },
+  "preferredNotifChannel": "terminal_bell"
 }

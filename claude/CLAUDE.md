@@ -18,7 +18,7 @@ Unless overridden by a specific repo:
 ## Feature development
 - develop on a separate, per-feature git (or similar version control) branch
 - name the branch based on the work we are doing, with snake_case
-- **Ground in existing design philosophy BEFORE asking questions**: Before interviewing the user or proposing anything, read `planning/designs/principles.md`, `planning/strategy/`, and any existing designs in `planning/designs/unbuilt/` and `planning/designs/built/`. Your interview questions and design proposals must demonstrate familiarity with existing principles, entities, and patterns. If you ask a question that the design docs already answer, that's a failure.
+- **Ground in existing design philosophy BEFORE asking questions**: Before interviewing the user or proposing anything, read `planning/designs/principles.md`, `planning/strategy/`, and any existing designs in `planning/designs/unbuilt/`, `planning/designs/prototyping/`, and `planning/designs/built/`. Your interview questions and design proposals must demonstrate familiarity with existing principles, entities, and patterns. If you ask a question that the design docs already answer, that's a failure.
 - When I first am discussing a new feature, interview me in detail using the AskUserQuestionTool about the feature: technical implementation, UI & UX, concerns, tradeoffs, etc. that we haven't covered.
 - every repo should have some strategic dimensions, like "A even over B" statements such as "stability even over speed" or "cheap even over quality" or similar "Real Strategy". If none exist, interview me about what you think the key dimensions (3-5) should be and write that into that repo's LEARNINGS.md
 
@@ -37,14 +37,15 @@ Vector embeddings, specific database choices, API design - these are HOW. They s
 ## Design Docs Organization
 All markdown planning and design docs live under `planning/` at the repo root. Never create a root `designs/` folder.
 - `planning/designs/unbuilt/` - Unbuilt/pending feature designs
+- `planning/designs/prototyping/` - Designs actively being prototyped/implemented
 - `planning/designs/built/` - Implemented feature designs
 - `planning/product/` - Product descriptions and vision
 - `planning/strategy/` - Strategic tradeoffs and dimensions
 
-No design files should live directly in `planning/designs/` - always use the `unbuilt/` or `built/` subfolder. When a feature is implemented, move its design doc from `planning/designs/unbuilt/` to `planning/designs/built/`. Update any symlinks in `.claude/commands/` accordingly.
+No design files should live directly in `planning/designs/` - always use the `unbuilt/`, `prototyping/`, or `built/` subfolder. Design lifecycle: `unbuilt/` → `prototyping/` → `built/`. When prototyping begins, move the design doc from `unbuilt/` to `prototyping/`. When implementation is complete, move from `prototyping/` to `built/`. All designs must pass through the prototyping phase. Update any symlinks in `.claude/commands/` accordingly.
 
 ## Post-Feature Consolidation Check
-After completing any feature, ask: "What does this replace, overlap with, or obsolete?"
+After completing any feature, ask: "What does this replace, overlap with, or obsolete?" Also move the relevant design doc along the `unbuilt/` → `prototyping/` → `built/` lifecycle if its status has changed.
 
 If consolidation candidates exist:
 1. Discuss with user before any removal
