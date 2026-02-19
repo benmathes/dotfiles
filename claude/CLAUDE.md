@@ -53,3 +53,6 @@ If consolidation candidates exist:
 3. Split removal work to a separate branch
 
 This guards against: feature bloat, combinatorial state/bug explosion, and pager burden. These systems must be maintainable by one person.
+
+## Metacognition
+After every major request -- ask me if I'm working on the right thing? Suggest what I might be working on instead? I want you to make sure I stop and think of alternate things I could be focusing on with you.
