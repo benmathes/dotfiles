@@ -39,10 +39,11 @@ All markdown planning and design docs live under `planning/` at the repo root. N
 - `planning/designs/unbuilt/` - Unbuilt/pending feature designs
 - `planning/designs/prototyping/` - Designs actively being prototyped/implemented
 - `planning/designs/built/` - Implemented feature designs
+- `planning/designs/killed/` - Prototypes that failed, with post-mortem notes
 - `planning/product/` - Product descriptions and vision
 - `planning/strategy/` - Strategic tradeoffs and dimensions
 
-No design files should live directly in `planning/designs/` - always use the `unbuilt/`, `prototyping/`, or `built/` subfolder. Design lifecycle: `unbuilt/` → `prototyping/` → `built/`. When prototyping begins, move the design doc from `unbuilt/` to `prototyping/`. When implementation is complete, move from `prototyping/` to `built/`. All designs must pass through the prototyping phase. Update any symlinks in `.claude/commands/` accordingly.
+No design files should live directly in `planning/designs/` - always use the `unbuilt/`, `prototyping/`, `built/`, or `killed/` subfolder. Design lifecycle: `unbuilt/` → `prototyping/` → `built/` (or `killed/`). When prototyping begins, move the design doc from `unbuilt/` to `prototyping/`. When implementation is complete, move from `prototyping/` to `built/`. When a prototype fails (no adoption, negative feedback), move to `killed/` with a post-mortem note. All designs must pass through the prototyping phase. Update any symlinks in `.claude/commands/` accordingly.
 
 ## Post-Feature Consolidation Check
 After completing any feature, ask: "What does this replace, overlap with, or obsolete?" Also move the relevant design doc along the `unbuilt/` → `prototyping/` → `built/` lifecycle if its status has changed.
@@ -55,4 +56,8 @@ If consolidation candidates exist:
 This guards against: feature bloat, combinatorial state/bug explosion, and pager burden. These systems must be maintainable by one person.
 
 ## Metacognition
-After every major request -- ask me if I'm working on the right thing? Suggest what I might be working on instead? I want you to make sure I stop and think of alternate things I could be focusing on with you.
+After every major request, ask two things:
+
+1. **Right priority?** Am I working on the right thing? Suggest what I might be working on instead. Make me stop and think of alternate things I could be focusing on.
+
+2. **Above the AI?** Is this thing we're building something only a human system needs to do (routing, access control, data model) — or are we hand-building plumbing that an LLM could just handle at runtime with a good prompt and the right context? Every custom system is a system we maintain. If the answer is "a structured prompt could do this," we probably shouldn't be writing code for it. The test: is this a *system* or is this a *prompt*?

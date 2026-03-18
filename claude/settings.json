@@ -1,17 +1,29 @@
 {
-  "model": "opus",
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/bell.sh"
-          }
+    "model": "sonnet[1m]",
+    "hooks": {
+        "PreToolUse": [
+            {
+                "matcher": "Bash",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "~/.claude/hooks/allow-bash-syntax.sh"
+                    }
+                ]
+            }
+        ],
+        "Notification": [
+            {
+                "matcher": "",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "~/.claude/hooks/bell.sh"
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  },
-  "preferredNotifChannel": "terminal_bell"
+    },
+    "effortLevel": "high",
+    "preferredNotifChannel": "terminal_bell"
 }
