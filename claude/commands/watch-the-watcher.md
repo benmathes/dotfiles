@@ -1,10 +1,10 @@
 # Watch the Watcher
 
-Audit the guidance documents that shape how Claude operates in this repo. Find contradictions, staleness, redundancy, and drift so the docs stay trustworthy.
+Audit the guidance documents that shape how coding agents (Claude, Codex, Copilot, etc.) operate in this repo. Find contradictions, staleness, redundancy, and drift so the docs stay trustworthy.
 
 ## Step 1: Discover guidance files
 
-Do NOT assume a specific directory structure. Dynamically find all markdown files that guide Claude's behavior:
+Do NOT assume a specific directory structure. Dynamically find all markdown files that guide coding agent behavior:
 
 **Always present:**
 - `~/.claude/CLAUDE.md` (global user instructions)
@@ -13,12 +13,13 @@ Do NOT assume a specific directory structure. Dynamically find all markdown file
 
 **Discover by scanning:**
 - `CLAUDE.md` files anywhere in the repo (nested project instructions)
+- Agent guidance files: `AGENTS.md`, `CODEX.md`, `COPILOT.md`, `.github/copilot-instructions.md`, `codex.md`
 - Markdown files in any `planning/`, `designs/`, `docs/`, `strategy/`, `policy/` directories
 - Any `.claude/commands/*.md` files (skill definitions)
 - `CONTRIBUTING.md`, `ARCHITECTURE.md`, `DEVELOPMENT.md`, or similar top-level guidance docs
-- Memory files: `~/.claude/projects/*/memory/*.md` or `.claude/memory/*.md`
+- Memory files: `.claude/memory/*.md`
 
-Use Glob with patterns like `**/CLAUDE.md`, `**/planning/**/*.md`, `**/docs/**/*.md`, `**/designs/**/*.md`, `**/{CONTRIBUTING,ARCHITECTURE,DEVELOPMENT,CONVENTIONS}.md` to find them. Report what you found before proceeding.
+Use Glob with patterns like `**/CLAUDE.md`, `**/AGENTS.md`, `**/CODEX.md`, `**/.github/copilot-instructions.md`, `**/planning/**/*.md`, `**/docs/**/*.md`, `**/designs/**/*.md`, `**/{CONTRIBUTING,ARCHITECTURE,DEVELOPMENT,CONVENTIONS}.md` to find them. Report what you found before proceeding.
 
 ## Step 2: Read and analyze
 
@@ -31,7 +32,8 @@ Then run every check below across the full set of files.
 ### 1. Contradictions
 Statements in one file that directly conflict with statements in another. Examples:
 - A principle says "never do X" but another file says "we do X because..."
-- Global CLAUDE.md says one thing, repo CLAUDE.md says the opposite
+- Global CLAUDE.md says one thing, repo CLAUDE.md or AGENTS.md says the opposite
+- Different agent guidance files (CLAUDE.md vs AGENTS.md vs copilot-instructions.md) give conflicting instructions
 - Strategy implies one priority, a design doc assumes the opposite
 - Policy forbids something that a design doc proposes
 
@@ -86,7 +88,7 @@ Present findings as a structured report in the conversation. Group by check type
 ```
 
 Severity levels:
-- **HIGH**: Active contradiction that could cause Claude to do the wrong thing
+- **HIGH**: Active contradiction that could cause a coding agent to do the wrong thing
 - **MEDIUM**: Staleness or redundancy that wastes context or misleads
 - **LOW**: Hygiene issue, minor drift, or optimization opportunity
 
