@@ -22,7 +22,7 @@ Use Glob with patterns like `**/CLAUDE.md`, `**/planning/**/*.md`, `**/docs/**/*
 
 ## Step 2: Read and analyze
 
-Read ALL discovered guidance files. For large directories of design docs, read at least the first 30 lines of each to capture purpose and key claims. Read core guidance files (CLAUDE.md, LEARNINGS.md, principles, strategy, policy) in full.
+Read ALL discovered guidance files. For large directories of design docs, read all of them if you can. Read core guidance files (CLAUDE.md, LEARNINGS.md, principles, strategy, policy) in full.
 
 Then run every check below across the full set of files.
 
