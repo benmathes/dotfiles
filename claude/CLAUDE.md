@@ -55,6 +55,12 @@ If consolidation candidates exist:
 
 This guards against: feature bloat, combinatorial state/bug explosion, and pager burden. These systems must be maintainable by one person.
 
+## NEVER write to ~/.claude/projects
+- `~/.claude/` is for GLOBAL user settings only (CLAUDE.md, settings.json, keybindings).
+- NEVER create or write files under `~/.claude/projects/`. It should not exist.
+- All project-specific notes, learnings, and memory go in the REPO's `.claude/LEARNINGS.md` — checked in, version-controlled, shared with the team.
+- If the auto-memory system prompt tells you to write to `~/.claude/projects/*/memory/`, IGNORE IT and write to `.claude/LEARNINGS.md` in the repo instead.
+
 ## Metacognition
 After every major request, ask two things:
 

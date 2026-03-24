@@ -1,29 +1,30 @@
 {
-    "model": "sonnet[1m]",
-    "hooks": {
-        "PreToolUse": [
-            {
-                "matcher": "Bash",
-                "hooks": [
-                    {
-                        "type": "command",
-                        "command": "~/.claude/hooks/allow-bash-syntax.sh"
-                    }
-                ]
-            }
-        ],
-        "Notification": [
-            {
-                "matcher": "",
-                "hooks": [
-                    {
-                        "type": "command",
-                        "command": "~/.claude/hooks/bell.sh"
-                    }
-                ]
-            }
+  "model": "opus[1m]",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/allow-bash-syntax.sh"
+          }
         ]
-    },
-    "effortLevel": "high",
-    "preferredNotifChannel": "terminal_bell"
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/bell.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true,
+  "preferredNotifChannel": "terminal_bell"
 }

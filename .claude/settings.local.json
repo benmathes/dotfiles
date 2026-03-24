@@ -11,7 +11,8 @@
       "Bash(gh auth status)",
       "Bash(gh repo edit:*)",
       "Bash(ln:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(git config:*)"
     ]
   }
 }

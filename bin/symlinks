@@ -43,4 +43,7 @@ mkdir -p ~/.claude
 symlink_prompt claude/CLAUDE.md .claude/CLAUDE.md
 symlink_prompt claude/settings.json .claude/settings.json
 
+mkdir -p ~/.claude/commands
+symlink_prompt claude/commands/watch-the-watcher.md .claude/commands/watch-the-watcher.md
+
 symlink_prompt git-completion.bash .git-completion.bash
