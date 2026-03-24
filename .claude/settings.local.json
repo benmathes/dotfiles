@@ -12,7 +12,9 @@
       "Bash(gh repo edit:*)",
       "Bash(ln:*)",
       "Bash(ls:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ]
   }
 }
