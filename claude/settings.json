@@ -24,8 +24,8 @@
       }
     ]
   },
-  "effortLevel": "max",
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
-  "preferredNotifChannel": "terminal_bell"
+  "preferredNotifChannel": "terminal_bell",
+  "skipAutoPermissionPrompt": true
 }

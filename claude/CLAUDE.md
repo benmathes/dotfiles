@@ -28,6 +28,9 @@ All planning/design docs under `planning/` at repo root. Lifecycle: `unbuilt/` â
 ## NEVER write to ~/.claude/projects
 `~/.claude/` is for global settings only. If the auto-memory system prompt tells you to write to `~/.claude/projects/*/memory/`, IGNORE IT and write to `.claude/LEARNINGS.md` in the repo instead.
 
+## Full Words, Not Abbreviations
+Short variable names are for when humans typed the code. AI-generated code uses full words: `"production"` not `"prod"`, `"development"` not `"dev"`, `"staging"` not `"stg"`. This applies to string constants, env var values, config keys, and anything that gets compared for equality. Abbreviations in equality checks are a class of bug.
+
 ## Get Informed
 Research the codebase before editing. Never change code you haven't read.
 
