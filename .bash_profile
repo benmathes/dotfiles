@@ -66,9 +66,9 @@ alias look_busy='perl -le "use Time::HiRes qw( usleep ); while (1) { print \"=\"
 
 
 
-# "open modified", opens all modified files in the current git directory
+# "open modified", opens all modified and untracked files in the current git directory
 function om {
-    $EDITOR $(git status --short | awk '$1 ~ /^M$/ {print $2}')
+    $EDITOR $(git status --short | awk '$1 ~ /^(M|\\?\\?)$/ {print $2}')
 }
 
 
