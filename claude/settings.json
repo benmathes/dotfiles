@@ -22,10 +22,32 @@
           }
         ]
       }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/caffeinate-turn.sh start \"$(jq -r .session_id)\" \"$PPID\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/caffeinate-turn.sh stop \"$(jq -r .session_id)\""
+          }
+        ]
+      }
     ]
   },
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
   "preferredNotifChannel": "terminal_bell",
-  "skipAutoPermissionPrompt": true
+  "enabledPlugins": {
+    "playwright@claude-plugins-official": true
+  }
 }
