@@ -1,4 +1,8 @@
 {
+  "env": {
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
   "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
@@ -8,6 +12,15 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/allow-bash-syntax.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Agent|Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/subagent-model-gate.sh"
           }
         ]
       }
@@ -42,12 +55,40 @@
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat ~/.claude/hooks/subagent-model-routing.md"
+          }
+        ]
+      }
     ]
   },
+  "enabledPlugins": {
+    "aiqrank@aiqrank": true,
+    "impeccable@impeccable": true
+  },
+  "extraKnownMarketplaces": {
+    "aiqrank": {
+      "source": {
+        "source": "github",
+        "repo": "aiqrank/plugin"
+      }
+    },
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
+    }
+  },
+  "tui": "fullscreen",
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
   "preferredNotifChannel": "terminal_bell",
-  "enabledPlugins": {
-    "playwright@claude-plugins-official": true
-  }
+  "skipAutoPermissionPrompt": true
 }
