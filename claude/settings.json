@@ -14,15 +14,6 @@
             "command": "~/.claude/hooks/allow-bash-syntax.sh"
           }
         ]
-      },
-      {
-        "matcher": "Agent|Task",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/subagent-model-gate.sh"
-          }
-        ]
       }
     ],
     "Notification": [
