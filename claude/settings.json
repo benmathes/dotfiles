@@ -3,7 +3,6 @@
     "PYTHONUNBUFFERED": "1",
     "PYTHONIOENCODING": "utf-8"
   },
-  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -76,6 +75,21 @@
       }
     }
   },
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-fable-5-2": {
+      "effortLevel": "high"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "medium"
+    }
+  },
+  "autoUpdatesChannel": "stable",
   "tui": "fullscreen",
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,

@@ -6,7 +6,6 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin
 
 export EDITOR=emacs
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export CLAUDE_CODE_EFFORT_LEVEL=max
 
 export HISTCONTROL=erasedups
 export HISTSIZE=50000
@@ -85,3 +84,4 @@ if [ -f ~/.git-completion.bash ]; then
   __git_complete gp _git_pull
 fi
 eval "$(direnv hook bash)"
+export PATH="$HOME/.local/bin:$PATH"
